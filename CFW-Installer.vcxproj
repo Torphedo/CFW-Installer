@@ -89,11 +89,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>bit7z;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>bit7z;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -105,13 +106,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>bit7z;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>bit7z;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -121,11 +123,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>bit7z;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>bit7z;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -137,13 +140,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>bit7z;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>bit7z;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -151,27 +155,15 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\bit7z.hpp" />
-    <ClInclude Include="include\bit7zlibrary.hpp" />
-    <ClInclude Include="include\bitarchivecreator.hpp" />
-    <ClInclude Include="include\bitarchivehandler.hpp" />
-    <ClInclude Include="include\bitarchiveinfo.hpp" />
-    <ClInclude Include="include\bitarchiveitem.hpp" />
-    <ClInclude Include="include\bitarchiveopener.hpp" />
-    <ClInclude Include="include\bitcompressionlevel.hpp" />
-    <ClInclude Include="include\bitcompressionmethod.hpp" />
-    <ClInclude Include="include\bitcompressor.hpp" />
-    <ClInclude Include="include\bitexception.hpp" />
-    <ClInclude Include="include\bitextractor.hpp" />
-    <ClInclude Include="include\bitformat.hpp" />
-    <ClInclude Include="include\bitguids.hpp" />
-    <ClInclude Include="include\bitinputarchive.hpp" />
-    <ClInclude Include="include\bitmemcompressor.hpp" />
-    <ClInclude Include="include\bitmemextractor.hpp" />
-    <ClInclude Include="include\bitpropvariant.hpp" />
-    <ClInclude Include="include\bitstreamcompressor.hpp" />
-    <ClInclude Include="include\bitstreamextractor.hpp" />
-    <ClInclude Include="include\bittypes.hpp" />
+    <ClInclude Include="bit7z\bit7zlibrary.hpp" />
+    <ClInclude Include="bit7z\bitarchivehandler.hpp" />
+    <ClInclude Include="bit7z\bitarchiveopener.hpp" />
+    <ClInclude Include="bit7z\bitcompressionmethod.hpp" />
+    <ClInclude Include="bit7z\bitexception.hpp" />
+    <ClInclude Include="bit7z\bitextractor.hpp" />
+    <ClInclude Include="bit7z\bitformat.hpp" />
+    <ClInclude Include="bit7z\bitguids.hpp" />
+    <ClInclude Include="bit7z\bittypes.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
