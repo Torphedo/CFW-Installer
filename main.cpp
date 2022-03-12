@@ -44,8 +44,11 @@ int main() {
 	cout << "Downloaded Hekate.\n";
 	extract_zip("D:\\test", "D:\\test\\hekate.zip");
 
+	cout << "Downloading common homebrew apps...";
 	URLDownloadToFile(NULL, L"https://github.com/DarkMatterCore/nxdumptool/releases/download/v1.1.15/nxdumptool.nro", L"D:\\test\\switch\\nxdumptool.nro", 0, NULL);
 	URLDownloadToFile(NULL, L"https://github.com/fortheusers/hb-appstore/releases/download/2.2/appstore.nro", L"D:\\test\\switch\\appstore.nro", 0, NULL);
+	URLDownloadToFile(NULL, L"https://github.com/J-D-K/JKSV/releases/download/09%2F01%2F2021/JKSV.nro", L"D:\\test\\switch\\JKSV.nro", 0, NULL);
+	URLDownloadToFile(NULL, L"https://github.com/shchmue/Lockpick_RCM/releases/download/v1.9.6/Lockpick_RCM.bin", L"D:\\test\\bootloader\\payloads\\Lockpick_RCM.bin", 0, NULL);
 
 	return 1;
 }
