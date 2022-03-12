@@ -6,8 +6,8 @@
 
 #include<iostream>
 #include<thread>
-#include "bit7z\bitextractor.hpp"
-#include "bit7z\bitexception.hpp"
+#include <bitextractor.hpp>
+#include <bitexception.hpp>
 #pragma comment(lib, "urlmon.lib")
 using namespace std;
 using namespace  bit7z;
