@@ -8,6 +8,8 @@
 #include <tchar.h>
 #include <stdio.h>
 #include <cstdio>
+#include <cstring>
+#include <string>
 #include<chrono>
 #include<thread>
 #include "include\bitextractor.hpp"
