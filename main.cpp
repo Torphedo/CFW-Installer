@@ -18,7 +18,7 @@
 using namespace std;
 using namespace  bit7z;
 
-int extract_zip(wstring path, wstring file, string filestr) {
+int extract_zip(wstring path, wstring file, std::string filestr) {
 	cout << "Extracting...\n";
 	try {
 		Bit7zLibrary lib{ L"7z.dll" };
@@ -29,6 +29,10 @@ int extract_zip(wstring path, wstring file, string filestr) {
 	catch (const BitException& ex) {
 		cout << "Error when extracting!";
 	}
+
+	char* file_char;
+	file_char = &filestr[0];
+	remove(file_char);
 	return 0;
 
 }
@@ -51,6 +55,4 @@ int main() {
 	URLDownloadToFile(NULL, L"https://github.com/fortheusers/hb-appstore/releases/download/2.2/appstore.nro", L"D:\\test\\switch\\appstore.nro", 0, NULL);
 	URLDownloadToFile(NULL, L"https://github.com/J-D-K/JKSV/releases/download/09%2F01%2F2021/JKSV.nro", L"D:\\test\\switch\\JKSV.nro", 0, NULL);
 	URLDownloadToFile(NULL, L"https://github.com/shchmue/Lockpick_RCM/releases/download/v1.9.6/Lockpick_RCM.bin", L"D:\\test\\bootloader\\payloads\\Lockpick_RCM.bin", 0, NULL);
-
-	return 1;
 }
