@@ -93,8 +93,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,8 +111,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,8 +125,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,12 +143,35 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>bit7z64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\bit7z.hpp" />
+    <ClInclude Include="include\bit7zlibrary.hpp" />
+    <ClInclude Include="include\bitarchivecreator.hpp" />
+    <ClInclude Include="include\bitarchivehandler.hpp" />
+    <ClInclude Include="include\bitarchiveinfo.hpp" />
+    <ClInclude Include="include\bitarchiveitem.hpp" />
+    <ClInclude Include="include\bitarchiveopener.hpp" />
+    <ClInclude Include="include\bitcompressionlevel.hpp" />
+    <ClInclude Include="include\bitcompressionmethod.hpp" />
+    <ClInclude Include="include\bitcompressor.hpp" />
+    <ClInclude Include="include\bitexception.hpp" />
+    <ClInclude Include="include\bitextractor.hpp" />
+    <ClInclude Include="include\bitformat.hpp" />
+    <ClInclude Include="include\bitguids.hpp" />
+    <ClInclude Include="include\bitinputarchive.hpp" />
+    <ClInclude Include="include\bitmemcompressor.hpp" />
+    <ClInclude Include="include\bitmemextractor.hpp" />
+    <ClInclude Include="include\bitpropvariant.hpp" />
+    <ClInclude Include="include\bitstreamcompressor.hpp" />
+    <ClInclude Include="include\bitstreamextractor.hpp" />
+    <ClInclude Include="include\bittypes.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
