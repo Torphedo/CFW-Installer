@@ -10,11 +10,9 @@
 #include <cstdio>
 #include<chrono>
 #include<thread>
-#include "include\bitextractor.hpp"
 #pragma comment(lib, "urlmon.lib")
 
 using namespace std;
-using namespace  bit7z;
 int main() {
 
 	system("tools\\TegraRcmSmash.exe tools\\memloader_usb.bin -r --dataini=tools\\ums_sd.ini");
@@ -34,11 +32,6 @@ int main() {
 	//system("tools\\7z.exe x -oD:\\test D:\\test\\hekate.zip > NUL");
 	//remove("D:\\test\\hekate.zip");
 	cout << "Extracted Hekate.\n";
-
-	Bit7zLibrary lib{ L"7z.dll" };
-	BitExtractor extractor{ lib, BitFormat::SevenZip };
-
-	BitExtractor extract(L"D:\\test\\hekate.zip", L"D:\\test"); //extracting a simple archive
 
 	return 1;
 }
