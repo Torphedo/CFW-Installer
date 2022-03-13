@@ -4,21 +4,21 @@
 using namespace std;
 
 int main() {
-	system("tools\\TegraRcmSmash.exe tools\\memloader_usb.bin -r --dataini=tools\\ums_sd.ini");
+	// system("tools\\TegraRcmSmash.exe tools\\memloader_usb.bin -r --dataini=tools\\ums_sd.ini");
 
-	this_thread::sleep_for(chrono::milliseconds(2000));
+	// this_thread::sleep_for(chrono::milliseconds(2000));
 
-	URLDownloadToFile(NULL, L"https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.2.6/atmosphere-1.2.6-master-173d5c2d3+hbl-2.4.1+hbmenu-3.5.0.zip", L"D:\\test\\atmosphere.zip", 0, NULL);
+	download_git_release(L"https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest", L"E:\\Git\\CFW-Installer\\test\\atmosphere.zip");
 	cout << "\nDownloaded Atmosphere.\n";
-	extract_zip(L"D:\\test", L"D:\\test\\atmosphere.zip", "D:\\test\\atmosphere.zip");
+	extract_zip(L"E:\\Git\\CFW-Installer\\test", "E:\\Git\\CFW-Installer\\test\\atmosphere.zip");
 
-	URLDownloadToFile(NULL, L"https://github.com/CTCaer/hekate/releases/download/v5.7.0/hekate_ctcaer_5.7.0_Nyx_1.2.0.zip", L"D:\\test\\hekate.zip", 0, NULL);
-	cout << "Downloaded Hekate.\n";
-	extract_zip(L"D:\\test", L"D:\\test\\hekate.zip", "D:\\test\\hekate.zip");
+	download_git_release(L"https://api.github.com/repos/CTCaer/hekate/releases/latest", L"E:\\Git\\CFW-Installer\\test\\hekate.zip");
+	cout << "\nDownloaded Hekate.\n";
+	extract_zip(L"E:\\Git\\CFW-Installer\\test", "E:\\Git\\CFW-Installer\\test\\hekate.zip");
 
-	cout << "Downloading common homebrew apps...";
-	URLDownloadToFile(NULL, L"https://github.com/DarkMatterCore/nxdumptool/releases/download/v1.1.15/nxdumptool.nro", L"D:\\test\\switch\\nxdumptool.nro", 0, NULL);
-	URLDownloadToFile(NULL, L"https://github.com/fortheusers/hb-appstore/releases/download/2.2/appstore.nro", L"D:\\test\\switch\\appstore.nro", 0, NULL);
-	URLDownloadToFile(NULL, L"https://github.com/J-D-K/JKSV/releases/download/09%2F01%2F2021/JKSV.nro", L"D:\\test\\switch\\JKSV.nro", 0, NULL);
-	URLDownloadToFile(NULL, L"https://github.com/shchmue/Lockpick_RCM/releases/download/v1.9.6/Lockpick_RCM.bin", L"D:\\test\\bootloader\\payloads\\Lockpick_RCM.bin", 0, NULL);
+	cout << "Downloading common homebrew apps...\n";
+	download_git_release(L"https://api.github.com/repos/DarkMatterCore/nxdumptool/releases/latest", L"E:\\Git\\CFW-Installer\\test\\switch\\nxdumptool.nro");
+	download_git_release(L"https://api.github.com/repos/fortheusers/hb-appstore/releases/latest", L"E:\\Git\\CFW-Installer\\test\\switch\\appstore.nro");
+	download_git_release(L"https://api.github.com/repos/J-D-K/JKSV/releases/latest", L"E:\\Git\\CFW-Installer\\test\\switch\\JKSV.nro");
+	download_git_release(L"https://api.github.com/repos/shchmue/Lockpick_RCM/releases/latest", L"E:\\Git\\CFW-Installer\\test\\bootloader\\payloads\\Lockpick_RCM.bin");
 }
