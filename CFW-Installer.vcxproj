@@ -164,6 +164,7 @@
     <ClInclude Include="bit7z\bitformat.hpp" />
     <ClInclude Include="bit7z\bitguids.hpp" />
     <ClInclude Include="bit7z\bittypes.hpp" />
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
