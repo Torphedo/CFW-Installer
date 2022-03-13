@@ -23,7 +23,7 @@ int extract_zip(wstring path, string filestr) {
 		extractor.extract(file, path);
 	}
 	catch (const BitException& ex) {
-		cout << "Error when extracting!";
+		cout << "Error when extracting!\n";
 	}
 
 	char* file_char;
