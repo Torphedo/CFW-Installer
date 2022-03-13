@@ -13,8 +13,6 @@ using namespace std;
 using namespace  bit7z;
 using namespace boost::property_tree;
 
-int json_num = 0;
-
 int extract_zip(wstring path, string filestr) {
 	wstring file = wstring(filestr.begin(), filestr.end());
 	cout << "Extracting...\n";
@@ -36,20 +34,12 @@ int extract_zip(wstring path, string filestr) {
 }
 
 int download_git_release(LPCWSTR link, LPCWSTR filename) {
-	json_num += 1;
-	string jsonstr = to_string(json_num) + ".json";
-
-	// Convert std::string input to LPCWSTR required by URLDownloadToFile()
-	wstring jsonwstr = wstring(jsonstr.begin(), jsonstr.end());
-	LPCWSTR output;
-	output = jsonwstr.c_str();
-
 	//Download JSON from GitHub API.
-	URLDownloadToFile(NULL, link, output, 0, NULL);
+	URLDownloadToFile(NULL, link, L"api.json", 0, NULL);
 
 	ptree root;
 	try {
-		read_json(jsonstr, root);
+		read_json("api.json", root);
 	}
 	catch (int error) {
 		cout << "Failed to read JSON!";
@@ -60,13 +50,12 @@ int download_git_release(LPCWSTR link, LPCWSTR filename) {
 
 	// Convert std::string to LPCWSTR required by URLDownloadToFile()
 	wstring wstr = wstring(download_link.begin(), download_link.end());
+	LPCWSTR output;
 	output = wstr.c_str();
 
 	// Download file
 	URLDownloadToFile(NULL, output, filename, 0, NULL);
 
-	// Convert jsonstr to char and delete JSON file
-	char* json_char = &jsonstr[0];
-	remove(json_char);
+	remove("api.json");
 	return 0;
 }
