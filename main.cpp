@@ -1,6 +1,5 @@
 #include<thread>
 #include "main.h"
-#pragma comment(lib, "urlmon.lib")
 using namespace std;
 
 int main() {
