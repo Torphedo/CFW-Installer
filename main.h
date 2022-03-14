@@ -41,17 +41,21 @@ int download_git_release(LPCWSTR link, LPCWSTR filename) {
 	try {
 		read_json("api.json", root);
 	}
-	catch (int error) {
+	catch (...) {
 		cout << "Failed to read JSON!";
 	}
 	// Get download link for the latest release on GitHub
 	string download_link = root.get<string>("assets..browser_download_url", "NOT FOUND");
 	wcout << "Downloaded " << filename << ".\n";
-
-	// Convert std::string to LPCWSTR required by URLDownloadToFile()
-	wstring wstr = wstring(download_link.begin(), download_link.end());
-	LPCWSTR output;
-	output = wstr.c_str();
+        try {
+	        // Convert std::string to LPCWSTR required by URLDownloadToFile()
+	        wstring wstr = wstring(download_link.begin(), download_link.end());
+	        LPCWSTR output;
+	        output = wstr.c_str();
+        }
+        catch (...) {
+                cout << "Failed to convert string!";
+        }
 
 	// Download file
 	URLDownloadToFile(NULL, output, filename, 0, NULL);
