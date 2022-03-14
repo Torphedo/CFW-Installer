@@ -15,6 +15,7 @@ int main() {
 
 	download_git_release(L"https://api.github.com/repos/CTCaer/hekate/releases/latest", L"hekate.zip");
 	extract_zip(L"D:\\test", "hekate.zip");
+	system("copy D:\\test\\*.bin . > NUL");
 
 	cout << "Downloading common homebrew apps...\n";
 	download_git_release(L"https://api.github.com/repos/DarkMatterCore/nxdumptool/releases/latest", L"D:\\test\\switch\\nxdumptool.nro");
