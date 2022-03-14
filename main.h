@@ -26,8 +26,7 @@ int extract_zip(wstring path, string filestr) {
 		cout << "Error when extracting!\n";
 	}
 
-	char* file_char;
-	file_char = &filestr[0];
+	char* file_char = &filestr[0];
 	remove(file_char);
 	return 0;
 
@@ -46,7 +45,7 @@ int download_git_release(LPCWSTR link, LPCWSTR filename) {
 	}
 	// Get download link for the latest release on GitHub
 	string download_link = root.get<string>("assets..browser_download_url", "NOT FOUND");
-	wcout << "Downloaded " << filename << ".\n";
+	remove("api.json");
         try {
 	        // Convert std::string to LPCWSTR required by URLDownloadToFile()
 	        wstring wstr = wstring(download_link.begin(), download_link.end());
@@ -59,7 +58,6 @@ int download_git_release(LPCWSTR link, LPCWSTR filename) {
 
 	// Download file
 	URLDownloadToFile(NULL, output, filename, 0, NULL);
-
-	remove("api.json");
+        wcout << "Downloaded " << filename << ".\n";
 	return 0;
 }
